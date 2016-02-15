@@ -76,7 +76,7 @@ module Mysql2
 
     if Thread.respond_to?(:handle_interrupt)
       def query(*args, &block)
-        Thread.handle_interrupt(Timeout::ExitException => :never) do
+        Thread.handle_interrupt(Timeout::Error => :never) do
           _query(*args, &block)
         end
       end
