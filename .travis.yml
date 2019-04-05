@@ -20,10 +20,24 @@ addons:
 rvm:
   - 2.6
   - 2.5
-  - 2.4
   - ruby-head
 matrix:
   include:
+    - rvm: 2.5
+      env: DB=mysql56
+      addons:
+        hosts:
+          - mysql2gem.example.com
+    - rvm: 2.5
+      env: DB=mysql57
+      addons:
+        hosts:
+          - mysql2gem.example.com
+    - rvm: 2.5
+      env: DB=mysql80
+      addons:
+        hosts:
+          - mysql2gem.example.com
     - rvm: 2.6
       env: DB=mysql56
       addons:
